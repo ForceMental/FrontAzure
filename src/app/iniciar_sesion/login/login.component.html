@@ -1,0 +1,11 @@
+<div class="body" >
+  <div class="panel_sesion">
+    <img src="assets/icon/Avatar.png" alt="avatar" class="avatar-image">
+    <h1 class="titulo">Cuenta de Ingreso</h1>
+    <button class="boton_ingresar" (click)="login()" type="submit">Ingresar</button>
+  </div>
+</div>
+<div class="container">
+
+  <router-outlet *ngIf="!isIframe"></router-outlet>
+</div>

@@ -1,0 +1,21 @@
+<!-- producto-edit-dialog.component.html -->
+<h2 mat-dialog-title>{{data.producto.id_producto ? 'Editar Producto' : 'Nuevo Producto'}}</h2>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+      <mat-error *ngIf="form.controls['nombre'].invalid">Nombre requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Stock</mat-label>
+      <input matInput formControlName="stock">
+      <mat-error *ngIf="form.controls['stock'].invalid">Nombre requerido</mat-error>
+    </mat-form-field>
+    <!-- Campos adicionales aquí -->
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [disabled]="form.invalid" (click)="onSave()">Guardar</button>
+</div>

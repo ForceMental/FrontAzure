@@ -1,0 +1,80 @@
+<div class="ventas-container">
+  <h2 class="titulo">Gestión de Ventas</h2>
+
+  <!-- Barra de herramientas con botón de volver y filtro -->
+  <div class="toolbar">
+    <!-- app-productos.component.html -->
+    <div class="volver-container">
+      <button class="volver-button" routerLink="/administracion">
+        <mat-icon class="volver-icon">❮</mat-icon>Panel de Administración
+      </button>
+    </div>
+
+
+
+
+      <!-- Filtro de Estado -->
+      <mat-form-field appearance="fill">
+          <mat-label class="filtro-estado">Filtrar por Estado</mat-label>
+          <mat-select (selectionChange)="filtrarPorEstado($event.value)">
+              <mat-option value="todos">Todos</mat-option>
+              <mat-option value="A">Aceptada</mat-option>
+              <mat-option value="C">Rechazada</mat-option>
+              <mat-option value="P">Pendiente</mat-option>
+          </mat-select>
+      </mat-form-field>
+  </div>
+
+  <!-- Tabla de Ventas -->
+  <table mat-table [dataSource]="ventasFiltradas" class="mat-elevation-z8">
+      <!-- Columnas de la tabla -->
+      <ng-container matColumnDef="nombreCliente">
+          <th mat-header-cell *matHeaderCellDef> Cliente </th>
+          <td mat-cell *matCellDef="let venta"> {{venta.nombreCliente}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="productoVendido">
+        <th mat-header-cell *matHeaderCellDef> Productos</th>
+        <td mat-cell *matCellDef="let venta"> {{ venta.cantidadProductos }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="detalleProductos">
+        <th mat-header-cell *matHeaderCellDef> Detalle Venta </th>
+        <td mat-cell *matCellDef="let venta">
+          <button mat-icon-button (click)="abrirDialogoDetalleProductos(venta.productos)">
+            <mat-icon>info_outline</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let venta" [ngClass]="{'estado-venta': true, 'aprobada': venta.estado === 'A', 'pendiente': venta.estado === 'P', 'rechazada': venta.estado === 'C'}">
+          <!-- Puedes reemplazar 'A', 'P', 'C' con los valores reales de tu aplicación -->
+          {{ venta.estado | translateEstado }} <!-- Suponiendo que tienes un pipe para traducir los estados -->
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombreEjecutivo">
+          <th mat-header-cell *matHeaderCellDef> Ejecutivo </th>
+          <td mat-cell *matCellDef="let venta"> {{venta.nombreEjecutivo}} </td>
+      </ng-container>
+
+      <!-- Nueva columna de acciones -->
+      <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let venta" class="botones-acciones">
+              <button mat-button  class="boton-aprobar" (click)="aprobarVenta(venta.id)" [disabled]="venta.estado !== 'P'">Aprobar</button>
+              <button mat-button  class="boton-cancelar" (click)="cancelarVenta(venta.id)" [disabled]="venta.estado !== 'P'">Cancelar</button>
+          </td>
+      </ng-container>
+
+      <!-- Cabecera y filas de la tabla -->
+      <tr mat-header-row *matHeaderRowDef="columnasMostradas.concat('acciones')"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnasMostradas.concat('acciones');"></tr>
+  </table>
+</div>
+
+
+

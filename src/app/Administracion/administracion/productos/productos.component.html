@@ -1,0 +1,27 @@
+
+<div class="productos-container" >
+  <h2 class="titulo">Productos</h2>
+  <div class="acciones">
+      <button class="btn btn-accion" (click)="nuevoProducto()">Añadir Producto</button>
+      <button class="btn btn-volver" routerLink="/administracion">Volver al Panel de Administración</button>
+  </div>
+  <table class="tabla-productos mat-elevation-z8">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td><p>{{ producto.nombre_producto }}</p></td>
+        <td>{{ producto.stock_producto}}</td>
+        <td class="acciones-celda">
+          <button class="btn btn-editar" (click)="editarProducto(producto)">Editar</button>
+          <button class="btn btn-eliminar" (click)="eliminarProducto(producto.id_producto)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

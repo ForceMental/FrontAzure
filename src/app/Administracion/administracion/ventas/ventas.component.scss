@@ -1,0 +1,176 @@
+/* ventas.component.scss */
+.ventas-container {
+  background: linear-gradient(to bottom, #137b9b 10%,#0c2a5d 90%, );
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.titulo {
+  font-size: 24px;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff; /* Color del texto (blanco en este caso) */
+  font-family: 'Lora', serif;
+  text-shadow: 2px 2px #000; /* Desplazamiento x, desplazamiento y, radio y color del borde */
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.volver-button {
+  background-color: #0085c2;
+  color: white;
+  padding: 10px 12px;  // Ajusté el padding para dar más espacio
+  margin-left: 5px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;  // Para alinear verticalmente el icono y el texto
+  align-items: baseline;  // Ajusté la alineación vertical para que la flecha esté alineada con el texto
+  font-size: 1rem;
+
+  .volver-icon {
+    margin-right: 5px;  // Ajusté el margen derecho del icono
+    font-size: 1rem;  // Puedes ajustar el tamaño del icono según tus preferencias
+  }
+
+  &:hover {
+    background-color: #0b5e85;
+  }
+}
+
+
+
+.botones-acciones {
+  margin-bottom: 1rem;
+  display: flex; /* Agrega esta línea para usar flexbox */
+  margin-top: 1rem;
+
+}
+
+.boton-aprobar {
+  background-color: #317588;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #105061;
+  }
+}
+
+.boton-cancelar {
+  background-color: #ff453e;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #da190b;
+  }
+}
+
+.filtro-estado{
+  color: #000;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 16px;
+}
+
+table {
+    // Sombra para dar profundidad
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    th, td {
+      padding: 12px 8px; // Espaciado para legibilidad
+      transition: background-color 0.3s ease; // Transición suave para el hover
+    }
+
+    tr:hover {
+      background-color: #f5f5f5; // Color de fondo al pasar el mouse
+    }
+  }
+
+  .mat-icon-button {
+    margin: 0 4px; // Espaciado alrededor de los botones de icono
+    transition: transform 0.3s ease; // Transición suave al hacer clic
+
+    &:hover {
+      transform: scale(1.1); // Aumenta ligeramente el tamaño al pasar el mouse
+    }
+  }
+
+  // Indicadores de estado con colores
+  .estado-venta {
+    &.aprobada { color: #4caf50; }
+    &.pendiente { color: #ff9800; }
+    &.rechazada { color: #f44336; }
+  }
+
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.mat-elevation-z8 {
+    box-shadow: 0 6px 10px -5px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .mat-form-field {
+        max-width: none;
+    }
+
+    .titulo {
+        font-size: 2rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    }
+
+    .boton-volver {
+        font-size: 14px; /* Tamaño de fuente más pequeño para botones */
+        padding: 8px 10px; /* Padding más pequeño para botones */
+    }
+
+    th, td {
+        padding: 6px; /* Padding más pequeño para celdas de tabla */
+    }
+}

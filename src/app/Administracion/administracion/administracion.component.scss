@@ -1,0 +1,79 @@
+.admin-panel {
+  background: linear-gradient(to bottom, #0c2a5d, #13999b); 
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.admin-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  
+}
+
+.nav-container {
+  
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente los elementos en el contenedor */
+  justify-content: center; /* Centra verticalmente los elementos en el contenedor */
+}
+
+.boton {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos del botón */
+  height: 40px; /* Ajusta la altura según tus necesidades */
+  margin-bottom: 5px; /* Agrega un margen inferior para separar los botones */
+}
+
+.boton mat-icon {
+  font-size: 1.5rem; /* Establece el tamaño del icono igual al tamaño de la letra */
+  margin-right: 10px; /* Ajusta el espacio entre el icono y el texto */
+  display: flex;
+  align-items: center; /* Alinea el icono verticalmente con el texto */
+}
+.icono-personas {
+  color: #ffffff; /* Puedes ajustar el color según tus preferencias */
+}
+
+
+.letra {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.footer-logo {
+  margin-top: auto;
+  width: 70%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+
+/* Media queries para la responsividad */
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 14px;
+  }
+
+  .admin-heading {
+    font-size: 1.8rem;
+  }
+
+  .nav-container {
+    max-width: 100%;
+  }
+}

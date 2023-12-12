@@ -1,0 +1,71 @@
+<!-- clientes.component.html -->
+<div class="clientes-container">
+    <h2 class="titulo">Clientes</h2>
+   <div class="acciones">
+    <button (click)="abrirDialogoNuevoCliente()" class="agregar-button">Agregar Nuevo Cliente</button>
+    <button routerLink="/administracion" class="volver-button">Volver al Panel de Administración</button>
+  </div>
+
+    <!-- Tabla de clientes -->
+    <mat-table [dataSource]="clientes" class="mat-elevation-z8">
+  
+      <!-- Columna de nombre -->
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.nombre }} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="apellido">
+        <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.apellido }} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="telefono">
+        <mat-header-cell *matHeaderCellDef> Teléfono </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.telefono }} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="correo_electronico">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.correo_electronico }} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="direccion">
+        <mat-header-cell *matHeaderCellDef> Dirección </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.direccion }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="comuna">
+        <mat-header-cell *matHeaderCellDef> Comuna </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.comuna?.nombre_comuna }} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="rut">
+        <mat-header-cell *matHeaderCellDef> RUT </mat-header-cell>
+        <mat-cell *matCellDef="let cliente"> {{ cliente.rut }} </mat-cell>
+      </ng-container>
+      
+  
+      
+  
+      <!-- Columna de acciones -->
+      <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let cliente">
+          <!-- Botón para editar cliente -->
+          <button mat-icon-button (click)="editarCliente(cliente)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <!-- Botón para eliminar cliente -->
+          <button mat-icon-button (click)="eliminarCliente(cliente)">
+            <mat-icon>delete</mat-icon>
+          </button> 
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Encabezados y filas de la tabla -->
+      <mat-header-row *matHeaderRowDef="columnasMostradas"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnasMostradas;"></mat-row>
+    </mat-table>
+  </div>
+  

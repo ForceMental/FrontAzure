@@ -1,0 +1,34 @@
+<div class="admin-panel">
+  <h1 class="admin-heading">¡Bienvenido al Panel de Administración!</h1>
+  <div class="nav-container">
+    <mat-nav-list class="admin-nav-list">
+      <!-- Botón Gestión de Clientes -->
+      <button mat-button routerLink="/clientes" class="boton">
+        <mat-icon>people</mat-icon>
+        <span class="letra">Gestión de Clientes</span>
+      </button>
+
+      <!-- Botón Inventario de Productos -->
+      <button mat-button routerLink="/productos" class="boton">
+        <mat-icon>inventory</mat-icon>
+        <span class="letra">Inventario de Productos</span>
+      </button>
+
+      <!-- Nuevo Botón Gestión de Ventas -->
+      <button mat-button routerLink="/ventas" class="boton">
+        <mat-icon>point_of_sale</mat-icon> <!-- Icono que representa ventas -->
+        <span class="letra">Gestión de Ventas</span>
+      </button>
+
+      <!-- Botón Dashboard Principal -->
+      <button mat-button routerLink="/navegacion" class="boton">
+        <mat-icon>dashboard</mat-icon>
+        <span class="letra">Dashboard Principal</span>
+      </button>
+    </mat-nav-list>
+  </div>
+  <footer class="admin-footer">
+    <img src="assets/icon/imagen-force-mental.png" alt="ForceMental Logo" class="footer-logo">
+  </footer>
+</div>
+

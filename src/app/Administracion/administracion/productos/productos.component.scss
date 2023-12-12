@@ -1,0 +1,117 @@
+/* Estilos CSS para tu componente de productos */
+
+.productos-container {
+  background-color: #f7f7f7; /* Cambia este valor al color que desees */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.titulo {
+  color: #333;
+  font-size: 24px;
+  margin-top: 2rem;
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.acciones {
+  margin-bottom: 20px;
+
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &-accion {
+      background-color: #4CAF50;
+      color: white;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    &-volver {
+      background-color: #008CBA;
+      color: white;
+      margin-left: 10px;
+
+      &:hover {
+        background-color: #007ba7;
+      }
+    }
+  }
+}
+
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .acciones-celda {
+    .btn {
+      &-editar {
+        background-color: #ffa500;
+        color: white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        &:hover {
+          background-color: #e69500;
+        }
+      }
+
+      &-eliminar {
+        background-color: #f44336;
+        color: white;
+        margin-left: 10px;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        &:hover {
+          background-color: #da190b;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 2rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+
+  .acciones .btn {
+    font-size: 14px; /* Tamaño de fuente más pequeño para botones */
+    padding: 8px 10px; /* Padding más pequeño para botones */
+  }
+
+  .tabla-productos th, .tabla-productos td {
+    padding: 6px; /* Padding más pequeño para celdas de tabla */
+  }
+
+  .tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+}

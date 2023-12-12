@@ -1,0 +1,73 @@
+<h2 mat-dialog-title>Agregar Nuevo Cliente</h2>
+<mat-dialog-content>
+  <form [formGroup]="nuevoClienteForm">
+    <!-- Campo Nombre -->
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+
+    <!-- Campo Apellido -->
+    <mat-form-field>
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido">
+    </mat-form-field>
+
+    <!-- Campo Teléfono -->
+    <mat-form-field>
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+
+    <!-- Campo Email -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="correo_electronico">
+      <mat-error *ngIf="nuevoClienteForm.get('correo_electronico')?.hasError('required')">
+        El correo electrónico es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="nuevoClienteForm.get('correo_electronico')?.hasError('email')">
+        El correo electrónico no es válido.
+      </mat-error>
+
+    </mat-form-field>
+
+    <!-- Campo Dirección -->
+    <mat-form-field>
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion">
+    </mat-form-field>
+
+    <!-- Campo RUT -->
+    <mat-form-field>
+      <mat-label>RUT</mat-label>
+      <input matInput formControlName="rut">
+      <!-- Mensajes de error para el campo RUT -->
+      <mat-error *ngIf="nuevoClienteForm.get('rut')?.hasError('required')">
+        El RUT es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="nuevoClienteForm.get('rut')?.hasError('invalidRut')">
+        El RUT no es válido.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Campo Comuna -->
+    <!-- Campo Comuna -->
+    <mat-form-field>
+      <mat-label>Comuna</mat-label>
+      <mat-select formControlName="comuna">
+        <mat-option *ngFor="let comuna of comunas" [value]="comuna.id">
+          {{ comuna.nombre_comuna }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <!-- Agrega otros campos según sea necesario -->
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onSubmit()">Agregar</button>
+</mat-dialog-actions>
