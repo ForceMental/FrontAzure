@@ -1,0 +1,117 @@
+.sidenav-container {
+  height: 90%;
+}
+
+.sidenav {
+  width: 200px;
+  text-align: center;
+  background: linear-gradient(to bottom, #0c2a5d, #13999b);
+}
+
+.title_menu {
+  background-color: #0c2a5d;
+  color: #ffffff;
+  font-family: 'Lora', serif;
+}
+
+.perfil  {
+  color: #ffffff;
+  margin: 10px 0 5px;
+}
+
+.nombre_avatar{
+  margin-top: -1rem;
+  color: #ffffff;
+
+}
+
+.lista .menu-button {
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s; /* Transiciones para suavizar el cambio */
+}
+
+.lista .menu-button:hover {
+  background-color: #ffffff;
+  color: #1a5c83; /* Cambio de color del texto al pasar el puntero */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.imagen_avatar {
+  width: 100px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  align-items:center; /* Alinea los elementos a la izquierda */
+  justify-content:center; /* Alinea los elementos a la izquierda */
+}
+
+
+
+
+
+
+.imagen_logo {
+  width: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title_dashboard,
+.title_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+  color: #ffffff;
+  font-family: 'Lora', serif;
+
+}
+
+.title_menu {
+  font-size: 1.5rem;
+}
+
+.boton-menu {
+  color: #ffffff;
+}
+
+.body {
+  text-align: center;
+}
+
+.toolbar {
+  text-align: center;
+  background-color: #0c2a5d;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+
+
+  .title_dashboard,
+  .title_menu {
+    font-size: 1.5rem; /* Reducir el tamaño de fuente en dispositivos móviles */
+  }
+  .imagen_avatar{
+    margin-top: 3rem;
+    width: 150px;
+  }
+
+  .nombre_avatar{
+    margin-top: -1rem;
+    color: #ffffff;
+
+  }
+
+  .imagen_logo {
+    width: 70%; /* Asegurar que la imagen del logo ocupe el 100% del ancho en dispositivos móviles */
+  }
+
+}

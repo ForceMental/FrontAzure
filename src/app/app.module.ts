@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MsalModule, MsalGuardConfiguration, MsalInterceptorConfiguration, MsalRedirectComponent, MsalGuard, MsalInterceptor } from '@azure/msal-angular';
 import { InteractionType, PublicClientApplication } from '@azure/msal-browser';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -34,6 +32,12 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
+import { NavegacionComponent } from './home/navegacion/navegacion.component';
+import { VentasComponent } from './Administracion/administracion/ventas/ventas.component';
+import { TranslateEstadoPipe } from './Administracion/administracion/ventas/translate-estado.pipe';
+
+
+import { DetalleProductosDialogComponent } from './Administracion/administracion/productos/detalle-productos-dialog/detalle-productos-dialog.component';
 const isIE: boolean = window.navigator.userAgent.indexOf('MSIE ') > -1 ||
   window.navigator.userAgent.indexOf('Trident/') > -1;
 const MsalInterceptorConfig = {} as MsalInterceptorConfiguration;
@@ -52,9 +56,15 @@ const MsalInterceptorConfig = {} as MsalInterceptorConfiguration;
     ConfirmDialogComponent,
     NuevoClienteDialogComponent,
     DashboardComponent,
+    NavegacionComponent,
+    DetalleProductosDialogComponent,
+    VentasComponent,
+    TranslateEstadoPipe,
+
 
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

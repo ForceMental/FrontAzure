@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" (openedChange)="menuOpened($event)">
+
+        <mat-toolbar class="title_menu">Menu</mat-toolbar>
+
+      <div class="perfil">
+        <img class="imagen_avatar" src="assets/icon/Avatar.png" alt="avatar">
+    </div>
+    <h3 class="nombre_avatar">Felipe Herrera</h3>
+
+    <mat-nav-list class="lista">
+
+      <button mat-button class="menu-button" (click)="toggleSidenavAndMenu('Visitas')">
+        <mat-icon>dashboard</mat-icon>Dashboard</button>
+      <button mat-button class="menu-button" [routerLink]="['/administracion']">
+        <mat-icon>settings</mat-icon> Administracion
+      </button>
+      <button mat-button class="menu-button" [routerLink]="['/']">
+        <mat-icon class="salir">arrow_back</mat-icon> Salir
+      </button>
+      <img class="imagen_logo" src="assets/icon/imagen-force-mental.png" alt="logo">
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="body">
+    <mat-toolbar class="toolbar">
+      <button type="button" class="boton-menu" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="title_dashboard">Dashboard</span>
+    </mat-toolbar>
+
+    <app-dashboard
+  *ngIf="showCircularChartCard"
+  (chartSelected)="onChartSelected($event)">
+</app-dashboard>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
