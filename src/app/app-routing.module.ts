@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { MsalGuard } from '@azure/msal-angular';
 import { BrowserUtils } from '@azure/msal-browser';
 import { DetalleProductosDialogComponent } from './Administracion/administracion/productos/detalle-productos-dialog/detalle-productos-dialog.component';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'profile', component: HomeComponent, canActivate: [MsalGuard]},
@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'ventas', component: VentasComponent },
   { path: 'detalle-productos', component: DetalleProductosDialogComponent },
+  { path: 'dashboard', component: DashboardComponent}
 ];
 
 const isIframe = window !== window.parent && !window.opener;

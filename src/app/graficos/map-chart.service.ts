@@ -31,7 +31,7 @@ export class MapChartService {
       map((data: any) => {
         const contadoresEmpleado = data.contadores_empleado;
         const chartData: any[] = [];
-
+        console.log(contadoresEmpleado);
         for (const key in contadoresEmpleado) {
           if (contadoresEmpleado.hasOwnProperty(key)) {
             const name = key;

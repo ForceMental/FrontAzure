@@ -76,7 +76,7 @@ export class ClientesService {
 
   // Eliminar un cliente
   deleteCliente(id: number): Observable<Cliente> {
-    return this.http.delete<Cliente>(`${'http://107.22.174.168:8000/api/clientes'}/${id}`);
+    return this.http.delete<Cliente>(`${'https://gatewayforce.azure-api.net/cliente/api/clientes'}/${id}/`);
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

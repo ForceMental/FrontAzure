@@ -51,7 +51,7 @@ export class VentasComponent implements OnInit {
       }
     });
   }
-  
+
   cancelarVenta(idVenta: number): void {
     this.ventasService.cancelarVenta(idVenta).subscribe({
       next: (ventaActualizada) => {
@@ -69,7 +69,7 @@ export class VentasComponent implements OnInit {
   private actualizarListaVentas(ventaActualizada: any): void {
     // Encuentra el índice de la venta actualizada en la lista actual
     const index = this.ventas.findIndex(venta => venta.id === ventaActualizada.id);
-  
+
     if (index !== -1) {
       // Si se encuentra, actualiza la venta en la lista
       this.ventas[index] = ventaActualizada;
@@ -77,14 +77,14 @@ export class VentasComponent implements OnInit {
       // Si es una venta nueva, la agrega a la lista
       this.ventas.push(ventaActualizada);
     }
-  
+
     // Filtra y actualiza la lista mostrada basándose en el estado seleccionado
     this.filtrarPorEstado(this.estadoSeleccionado);
   }
 
   cargarVentas(): void {
     this.ventasService.getVentas().subscribe((data: any[]) => {
-      console.log(data)
+      console.log(data);
       this.ventas = data.map(venta => ({
         ...venta,
         nombreCliente: venta.cliente_info ? `${venta.cliente_info.nombre} ${venta.cliente_info.apellido}` : 'N/A',
@@ -95,18 +95,18 @@ export class VentasComponent implements OnInit {
       this.ventasFiltradas = this.ventas;
     });
   }
-  
+
   public obtenerCantidadDeProductos(productos: any[]): string {
     if (Array.isArray(productos) && productos.length > 0) {
       return productos.reduce((sum, current) => sum + current.cantidad, 0) + ' Productos';
     }
     return 'No Products';
   }
-  
-  
-  
 
-  
+
+
+
+
 
   filtrarPorEstado(estado: string): void {
     console.log('Filtrando por estado:', estado);
@@ -121,7 +121,7 @@ export class VentasComponent implements OnInit {
     }
     console.log('Ventas filtradas:', this.ventasFiltradas);
   }
-  
+
 
 
   onEstadoSeleccionado(event: any): void {

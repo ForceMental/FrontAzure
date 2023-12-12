@@ -41,17 +41,17 @@ export class ProductosService {
       })
     };
 
-    return this.http.post<Producto>('http://107.22.174.168:8020/api/productos/', producto, httpOptions);
+    return this.http.post<Producto>('https://gatewayforce.azure-api.net/producto/api/productos/', producto, httpOptions);
   }
 
   // Actualizar un producto
   updateProducto(producto: Producto): Observable<Producto> {
     console.log(producto.id_producto);
-    return this.http.put<Producto>(`${'http://107.22.174.168:8020/api/productos/'}${producto.id_producto}/`, producto);
+    return this.http.put<Producto>(`${'https://gatewayforce.azure-api.net/producto/api/productos/'}${producto.id_producto}/`, producto);
   }
 
   // Eliminar un producto
   deleteProducto(id: number): Observable<Producto> {
-    return this.http.delete<Producto>(`${'http://107.22.174.168:8020/api/productos/'}${id}`);
+    return this.http.delete<Producto>(`${'https://gatewayforce.azure-api.net/producto/api/productos/'}${id}/`);
   }
 }

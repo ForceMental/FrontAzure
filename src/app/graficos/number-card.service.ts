@@ -23,9 +23,9 @@ export class NumberCardService {
   getNumberCardData(): Observable<any[]> {
     return this.service.obtenerDatosServiceVenta().pipe(
       map((data: any) => {
-        const conteoEjecutivoId = data.conteo_ejecutivo_id;
+        const conteoEjecutivoId = data.conteo_ejecutivos_nombres;
         const chartData: any[] = [];
-
+        console.log(data);
         for (const key in conteoEjecutivoId) {
           if (conteoEjecutivoId.hasOwnProperty(key)) {
             const producto = conteoEjecutivoId[key];

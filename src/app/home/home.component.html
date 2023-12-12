@@ -39,8 +39,12 @@
         <span class="title_dashboard">Dashboard</span>
       </mat-toolbar>
 
-
+      <app-dashboard
+    *ngIf="showCircularChartCard"
+    (chartSelected)="onChartSelected($event)">
+  </app-dashboard>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
 
 </ng-template>
